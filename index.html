@@ -3,20 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <title>Material TodoApp</title>
-    <link rel="stylesheet" href="vendors/angular-material/angular-material.css">
 
-    <script src="vendors/angular/angular.js"></script>
-    <script src="vendors/angular-animate/angular-animate.js"></script>
-    <script src="vendors/angular-aria/angular-aria.js"></script>
-    <script src="vendors/angular-material/angular-material.js"></script>
 
-    <script src="vendors/firebase/firebase.js"></script>
-    <script src="vendors/angularfire/dist/angularfire.js"></script>
+    <!--////////angularJS//////////////////////////////////-->
+    <script src="vendors/angular/angular.js"                    ></script>
 
+
+    <!--//////////angular material//////////////////-->
+    <link   rel="stylesheet" href="vendors/angular-material/angular-material.css">
+    <script src="vendors/angular-animate/angular-animate.js"    ></script>
+    <script src="vendors/angular-aria/angular-aria.js"          ></script>
+    <script src="vendors/angular-material/angular-material.js"  ></script>
+
+
+    <!--///////////Angular Fire///////////////////////////////-->
+    <script src="vendors/firebase/firebase.js"                  ></script>
+    <script src="vendors/angularfire/dist/angularfire.js"       ></script>
+
+    <!--////////////Icons///////////////////////-->
+    <link rel="stylesheet" href="vendors/angular-material-icons/angular-material-icons.css">
+    <script src="vendors/angular-material-icons/angular-material-icons.js"></script>
+
+    <!--////////////application module////////////////////////-->
     <script src="app.js"></script>
 
 </head>
-<body ng-app="myApp" ng-controller="appController as ctrl">
+<body ng-app="myApp" ng-controller="appController as ctrl" layout-padding>
 
 <form ng-submit="ctrl.add(ctrl.newTodo)">
 
@@ -39,26 +51,31 @@
         <md-button aria-label="Open phone interactions menu"
                    class="md-icon-button"
                    ng-click="ctrl.openMenu($mdOpenMenu, $event)">
-
+            <ng-md-icon icon="keyboard_arrow_down" ></ng-md-icon>
 
         </md-button>
         <md-menu-content width="4">
 
 
             <md-menu-item>
-                <md-button ng-click="ctrl.redial($event)">
+                <md-button ng-click="ctrl.markDone(item)">
+                    <ng-md-icon icon="done"></ng-md-icon>
                     mark done
                 </md-button>
             </md-menu-item>
 
             <md-menu-item>
-                <md-button ng-click="ctrl.redial($event)">
+                <md-button ng-click="ctrl.markNotDone(item)">
+                    <ng-md-icon icon="replay"></ng-md-icon>
+
                     mark not done
                 </md-button>
             </md-menu-item>
 
             <md-menu-item>
                 <md-button ng-click="ctrl.redial($event)">
+                    <ng-md-icon icon="delete"></ng-md-icon>
+
                     delete
                 </md-button>
             </md-menu-item>

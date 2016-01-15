@@ -7,10 +7,11 @@
 
 
     angular
-        .module("myApp", ["ngMaterial","firebase"])
+        .module("myApp", ["ngMaterial","firebase","ngMdIcons"])
+
         .controller("appController", ["$firebaseArray",appController]);
 
-    function appController( $firebaseArray ) {
+    function appController( $firebaseArray  ) {
 
         _this = this;
 
@@ -36,22 +37,40 @@
 
         _this.markDone = function(record){
 
+            if(record.status == 2)
+                return;
+
             record.status = 2;
             _this.todoList.$save(record);
 
+        };
 
+        _this.markNotDone = function(record){
+
+            if(record.status == 1)
+                return;
+
+            record.status = 1;
+            _this.todoList.$save(record);
 
         };
 
 
+//////////open menu code//////////////////////////////
+
+        _this.openMenu = function($mdOpenMenu, ev) {
+            originatorEv = ev;
+            $mdOpenMenu(ev);
+        };
+
+
+///////////////////////////
 
 
 
 
 
 
-
-        this.name = "abc inzwd klhdsd";
     }
 
 
