@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Material TodoApp</title>
+    <link rel="stylesheet" href="vendors/angular-material/angular-material.css">
+
+    <script src="vendors/angular/angular.js"></script>
+    <script src="vendors/angular-animate/angular-animate.js"></script>
+    <script src="vendors/angular-aria/angular-aria.js"></script>
+    <script src="vendors/angular-material/angular-material.js"></script>
+
+    <script src="vendors/firebase/firebase.js"></script>
+    <script src="vendors/angularfire/dist/angularfire.js"></script>
+
+    <script src="app.js"></script>
+
+</head>
+<body ng-app="myApp" ng-controller="appController as ctrl">
+
+<form ng-submit="ctrl.add(ctrl.newTodo)">
+
+    <md-input-container>
+        <label>new todo</label>
+        <input type="text" ng-model="ctrl.newTodo">
+    </md-input-container>
+    <md-button type="submit">add</md-button>
+</form>
+
+
+
+
+
+<div ng-repeat="item in ctrl.todoList">
+    {{item.text}} -- {{item.status}}
+
+
+    <md-menu>
+        <md-button aria-label="Open phone interactions menu"
+                   class="md-icon-button"
+                   ng-click="ctrl.openMenu($mdOpenMenu, $event)">
+
+
+        </md-button>
+        <md-menu-content width="4">
+
+
+            <md-menu-item>
+                <md-button ng-click="ctrl.redial($event)">
+                    mark done
+                </md-button>
+            </md-menu-item>
+
+            <md-menu-item>
+                <md-button ng-click="ctrl.redial($event)">
+                    mark not done
+                </md-button>
+            </md-menu-item>
+
+            <md-menu-item>
+                <md-button ng-click="ctrl.redial($event)">
+                    delete
+                </md-button>
+            </md-menu-item>
+
+
+
+        </md-menu-content>
+    </md-menu>
+
+
+
+</div>
+
+
+</body>
+</html>
