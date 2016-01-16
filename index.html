@@ -24,13 +24,46 @@
     <link rel="stylesheet" href="vendors/angular-material-icons/angular-material-icons.css">
     <script src="vendors/angular-material-icons/angular-material-icons.js"></script>
 
+
+    <!--//////////////my css files//////////////////////-->
+    <link rel="stylesheet" href="app.css">
+
     <!--////////////application module////////////////////////-->
     <script src="app.js"></script>
 
 </head>
 <body ng-app="myApp" ng-controller="appController as ctrl" layout-padding>
 
-<form ng-submit="ctrl.add(ctrl.newTodo)">
+
+<br>
+<br>
+<br>
+<br>
+
+<md-list class="md-padding">
+  <!--<md-subheader class="md-no-sticky">2 line item</md-subheader>-->
+  <md-list-item class="md-2-line">
+    <img src="profile.jpg" class="circle md-margin md-shadow-bottom-z-2" />
+
+    <div class="md-list-item-text md-padding ">
+
+      <span class="md-display-2 md-padding">M.Inzamam Malik</span>
+
+      <div class="md-headline md-padding">UI/UX Designer</div>
+
+    </div>
+
+  </md-list-item>
+</md-list>
+
+
+
+
+
+
+
+<!--
+<form ng-submit="ctrl.addTodo()">
 
     <md-input-container>
         <label>new todo</label>
@@ -43,8 +76,8 @@
 
 
 
-<div ng-repeat="item in ctrl.todoList">
-    {{item.text}} -- {{item.status}}
+    <div ng-repeat="item in ctrl.todoList | orderBy: '$index':true  " >
+    {{$index}}.{{item.text}} &#45;&#45; {{item.status}}
 
 
     <md-menu>
@@ -52,7 +85,6 @@
                    class="md-icon-button"
                    ng-click="ctrl.openMenu($mdOpenMenu, $event)">
             <ng-md-icon icon="keyboard_arrow_down" ></ng-md-icon>
-
         </md-button>
         <md-menu-content width="4">
 
@@ -73,7 +105,7 @@
             </md-menu-item>
 
             <md-menu-item>
-                <md-button ng-click="ctrl.delete(item)">
+                <md-button ng-click="ctrl.deleteTodo(item)">
                     <ng-md-icon icon="delete"></ng-md-icon>
 
                     delete
@@ -89,6 +121,7 @@
 
 </div>
 
+-->
 
 </body>
 </html>

@@ -11,7 +11,7 @@
 
         .controller("appController", ["$firebaseArray",appController]);
 
-//////////main controller/////////////////////////
+    //////////main controller/////////////////////////
     function appController( $firebaseArray  ) {
 
         _this = this;
@@ -21,21 +21,20 @@
         _this.todoList = $firebaseArray(rawData);
 
 
-////////////add a to-do///////////////////////
-        _this.add = function(text){
+        ////////////add a to-do///////////////////////
+        _this.addTodo = function(){
 
-            if(!text)
+            if(!_this.newTodo)
                 return;
 
             _this.todoList.$add({
-                    text : text ,
+                    text : _this.newTodo ,
                     status : 1
                 });
             _this.newTodo = "";
-
         };
 
-//////////mark to-do as done//////////////////////////
+        //////////mark to-do as done//////////////////////////
         _this.markDone = function(record){
 
             if(record.status == 2)
@@ -47,7 +46,7 @@
         };
 
 
-//////////mark to-do as not done//////////////////////////
+        //////////mark to-do as not done//////////////////////////
         _this.markNotDone = function(record){
 
             if(record.status == 1)
@@ -59,15 +58,13 @@
         };
 
 
-///////////detete a to-do///////////////////////////////////
-        _this.delete = function(record){
-
+        ///////////detete a to-do///////////////////////////////////
+        _this.deleteTodo = function(record){
             _this.todoList.$remove(record);
-
         };
 
 
-//////////open menu code//////////////////////////////
+        //////////open menu code//////////////////////////////
         _this.openMenu = function($mdOpenMenu, ev) {
             originatorEv = ev;
             $mdOpenMenu(ev);
