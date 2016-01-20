@@ -1,0 +1,20 @@
+{
+  "name": "angular-todo-app-2",
+  "homepage": "https://github.com/malikasinger1/angular-todo-app-2",
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendors",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-material": "~1.0.2",
+    "angular-material-icons": "~0.6.0"
+  }
+}
