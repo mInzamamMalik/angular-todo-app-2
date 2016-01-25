@@ -1,0 +1,41 @@
+
+
+.circle{
+     border-radius: 50% ;
+ width:150px !important;
+ height:150px !important;
+}
+
+
+.wall-img{
+    background-size: 100%;
+    background-image: url("../img/wall.png");
+    color:white;
+    background-repeat: repeat-x;
+}
+.no-margin{
+    margin: 0;
+}
+.no-padding{
+    padding: 0;
+}
+
+
+
+.border{
+    border: 1px solid black;
+}
+
+
+.counter{
+    width: 50%;
+}
+
+
+
+.completed{
+    background: #4dc2ff;
+}
+.remaining{
+    background: #ff7fe5;
+}
